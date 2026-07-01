@@ -1,0 +1,22 @@
+service_name: LidarPointCloudService
+
+someip:
+  service_id: 0x1234
+  instance_id: 0x5678
+  major_version: 1
+  minor_version: 0
+
+  eventgroup_id: 0x4465
+  event_id: 0x8778
+
+  protocol: udp
+  event_port: 30509
+
+  service_discovery:
+    multicast: 224.224.224.245
+    port: 30490
+
+emulator_input:
+  udp_ip: 127.0.0.1
+  udp_port: 25000
+  payload_format: utf8_lines
