@@ -1,0 +1,35 @@
+services:
+  lidar-node:
+    build:
+      context: .
+      dockerfile: docker/lidar-node.Dockerfile
+    container_name: lidar-node
+    networks:
+      sdv-net:
+        ipv4_address: 172.31.0.10
+    environment:
+      VSOMEIP_CONFIGURATION: /app/config/vsomeip/adapter-container.json
+      LD_LIBRARY_PATH: /usr/local/lib
+    volumes:
+      - ./logs:/app/logs
+    command: sleep infinity
+
+  score-node:
+    build:
+      context: .
+      dockerfile: docker/tools-node.Dockerfile
+    container_name: score-node
+    networks:
+      sdv-net:
+        ipv4_address: 172.31.0.20
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    command: sleep infinity
+
+networks:
+  sdv-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.0.0/24

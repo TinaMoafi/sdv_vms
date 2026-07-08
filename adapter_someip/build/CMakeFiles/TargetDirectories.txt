@@ -1,3 +1,0 @@
-/home/tina/pointcloud_redirection/adaptor-someip/build/CMakeFiles/lidar_adapter.dir
-/home/tina/pointcloud_redirection/adaptor-someip/build/CMakeFiles/edit_cache.dir
-/home/tina/pointcloud_redirection/adaptor-someip/build/CMakeFiles/rebuild_cache.dir
